@@ -1,0 +1,41 @@
+<script type="application/javascript">
+    let postMes = function(id) {
+        fetch("/users/update/post" + id, {
+            method: "PUT"
+        }).then(result => {
+            window.location = "/users"
+        })
+    }
+</script>
+
+<div class="navbar-fixed">
+    <nav>
+      <div class="nav-wrapper">
+               <ul class="right hide-on-med-and-down">
+          <li><a href="/users/login/">Login</a></li>
+          <li><a href="/users/signup/">Signup</a></li>
+          <li><a href="/users/posts">Posts</a></li>
+<li><a href="/users/logout">Logout</a></li>        </ul>
+      </div>
+    </nav>
+  </div>
+
+<h1>Hello {{FirstName}} {{LastName}}</h1>
+<h2>Email: {{Email}}</h2>
+<h3>Username: {{Username}}</h3>
+
+<h1>Create a Post</h1>
+<form action="/update/post" method="PUT">
+    <div>
+        <label for="PostTilte">Post Title: </label>
+        <input type="text" name="PostTitle">
+    </div>
+    <div>
+        <textarea rows="20" cols="50" name="PostBody"></textarea>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+    </div>
+</form>
+
+
